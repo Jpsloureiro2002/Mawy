@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambia</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px); 
+            grid-template-rows: repeat(3, 100px); 
+            gap: 10px; 
+        }
+
+        .card {
+            background-color: #D2B48C; 
+            color: white;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            background-size: cover; 
+            background-position: center; 
+            position: relative;
+            overflow: hidden;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .card-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 1;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .card.clicked .card-text {
+            display: none;
+        }
+
+        .card.clicked .card-image {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="card1">
+            <div class="card-text">Hobby</div>
+            <div class="card-image" style="background-image: url('imagens/Hobby.jpeg')"></div>
+        </div>
+        <div class="card" id="card2">
+            <div class="card-text">Flower</div>
+            <div class="card-image" style="background-image: url('imagens/Flor.jpg')"></div>
+        </div>
+        <div class="card" id="card3">
+            <div class="card-text">Color</div>
+            <div class="card-image" style="background-image: url('imagens/Cor.jpeg')"></div>
+        </div>
+        <div class="card" id="card4">
+            <div class="card-text">Season</div>
+            <div class="card-image" style="background-image: url('imagens/Season.jpg')"></div>
+        </div>
+        <div class="card" id="card5">
+            <div class="card-text">Character</div>
+            <div class="card-image" style="background-image: url('imagens/Persona.jpg')"></div>
+        </div>
+        <div class="card" id="card6">
+            <div class="card-text">City</div>
+            <div class="card-image" style="background-image: url('imagens/Cidade.jpeg')"></div>
+        </div>
+        <div class="card" id="card7">
+            <div class="card-text">Food</div>
+            <div class="card-image" style="background-image: url('imagens/Food.jpg')"></div>
+        </div>
+        <div class="card" id="card8">
+            <div class="card-text">Place</div>
+            <div class="card-image" style="background-image: url('imagens/Place.jpg')"></div>
+        </div>
+        <div class="card" id="card9">
+            <div class="card-text">Animal</div>
+            <div class="card-image" style="background-image: url('imagens/Animal.jpeg')"></div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.card').click(function(){
+                $(this).toggleClass('clicked');
+            });
+        });
+    </script>
+</body>
+</html>
